@@ -1,0 +1,102 @@
+@charset "utf-8"; /* Define o padrão de caracteres para evitar erro em acentos */
+
+/* --- 1. VARIÁVEIS (DESIGN SYSTEM) --- */
+:root {
+    --primary: #3498db;          /* Define a cor azul principal */
+    --secondary: #2c3e50;        /* Define a cor azul escura para títulos */
+    --bg-body: #f5f6fa;          /* Define a cor de fundo da página */
+    --bg-card: #ffffff;          /* Define a cor de fundo dos artigos */
+    --text: #2f3640;             /* Define a cor do texto principal */
+    --radius: 10px;              /* Define o arredondamento padrão dos cantos */
+}
+
+/* --- 2. RESET (LIMPEZA PADRÃO) --- */
+* {
+    margin: 0;                   /* Zera todas as margens externas */
+    padding: 0;                  /* Zera todos os preenchimentos internos */
+    box-sizing: border-box;      /* Garante que bordas e padding não aumentem o tamanho do elemento */
+}
+
+/* --- 3. ESTILO MOBILE (CELULAR PRIMEIRO) --- */
+body {
+    font-family: Arial, Helvetica, sans-serif; /* Define a família de fontes */
+    background-color: var(--bg-body);          /* Aplica a cor de fundo da variável */
+    color: var(--text);                        /* Aplica a cor do texto da variável */
+    line-height: 1.6;                          /* Define o espaçamento entre linhas do texto */
+    padding: 15px;                             /* Dá um espaço para o conteúdo não grudar na tela do celular */
+}
+
+/* Estilo do Cabeçalho */
+.main-header {
+    text-align: center;          /* Centraliza o texto no cabeçalho */
+    padding: 30px 0;             /* Espaçamento em cima e embaixo do header */
+    background-color: var(--secondary); /* Cor de fundo escura */
+    color: white;                /* Cor do texto branca para contraste */
+    border-radius: var(--radius); /* Arredonda as bordas do cabeçalho */
+    margin-bottom: 20px;         /* Espaço entre o header e o conteúdo principal */
+}
+
+/* Estilo do Bloco de Exercício (Article) */
+.exercise-box {
+    background-color: var(--bg-card); /* Define fundo branco para os cards */
+    padding: 20px;               /* Espaço interno para o texto não encostar na borda */
+    border-radius: var(--radius); /* Aplica o arredondamento de 10px */
+    margin-bottom: 20px;         /* Espaçamento entre um capítulo e outro */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Cria uma sombra leve para dar profundidade */
+}
+
+.exercise-box h1 {
+    color: var(--primary);       /* Define a cor do título do capítulo */
+    margin-bottom: 15px;         /* Espaço abaixo do h1 */
+    font-size: 1.5rem;           /* Tamanho do h1 adaptado para celular */
+}
+
+.exercise-box h2 {
+    color: var(--secondary);     /* Define a cor do subtítulo */
+    margin-top: 15px;            /* Espaço acima do h2 */
+    margin-bottom: 10px;         /* Espaço abaixo do h2 */
+    font-size: 1.2rem;           /* Tamanho do h2 adaptado para celular */
+}
+
+.exercise-box p {
+    margin-bottom: 10px;         /* Espaçamento entre parágrafos */
+    text-align: justify;         /* Alinha o texto dos dois lados (opcional) */
+}
+
+/* Estilo do Link de Navegação */
+.nav-link {
+    text-align: right;           /* Alinha o parágrafo do link à direita */
+    margin-top: 20px;            /* Espaço acima do link */
+}
+
+.nav-link a {
+    color: var(--primary);       /* Define a cor do link */
+    text-decoration: none;       /* Remove o sublinhado padrão do link */
+    font-weight: bold;           /* Deixa o texto do link em negrito */
+}
+
+/* Estilo do Rodapé */
+.main-footer {
+    margin-top: auto;
+    text-align: center;          /* Centraliza o texto do rodapé */
+    padding: 20px;               /* Espaçamento interno do rodapé */
+    font-size: 0.9rem;           /* Diminui um pouco a letra do rodapé */
+    background-color: #e2e8f0;
+}
+
+/* --- 4. MEDIA QUERY (PC / TELA GRANDE) --- */
+@media screen and (min-width: 768px) {
+    body {
+        max-width: 900px;        /* No PC, limita a largura máxima do site */
+        margin: 0 auto;          /* Centraliza o corpo do site no meio da tela */
+        padding: 40px;           /* Aumenta o respiro lateral no PC */
+    }
+
+    .exercise-box {
+        padding: 40px;           /* No PC, o card fica com mais espaço interno */
+    }
+
+    .main-header h1 {
+        font-size: 2.5rem;       /* No PC, o título fica bem maior */
+    }
+}
